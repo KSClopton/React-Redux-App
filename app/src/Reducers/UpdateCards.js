@@ -1,4 +1,4 @@
-import { GET_COCKTAILS_ERR } from '../Actions'
+import { GET_COCKTAILS_ERR } from '../Actions/index'
 import { GET_COCKTAILS_SUCCESS } from '../Actions'
 import { GET_COCKTAILS_START } from '../Actions'
 
@@ -7,7 +7,6 @@ const initialState = {
     error: '',
     isFetching: false
     
-
 }
 
 export const updateCards = (state = initialState, action) => {

@@ -1,6 +1,5 @@
 import axios from 'axios'
 
-
 export const GET_COCKTAILS_START = 'GET_COCKTAILS_START';
 export const GET_COCKTAILS_SUCCESS = 'GET_COCKTAILS_SUCCESS';
 export const GET_COCKTAILS_ERR = 'GET_COCKTAILS_ERR';

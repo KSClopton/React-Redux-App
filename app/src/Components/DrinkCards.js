@@ -5,14 +5,13 @@ import  Martini from '../Images/Martini.jpg'
 import  Mimosa from '../Images/Mimosa.jpg'
 import  Mojito from '../Images/Mojito.jpg'
 import  Whiskey from '../Images/Whiskey.jpg'
-import { getCocktails } from '../Actions'
+import {getCocktails} from '../Actions/index'
+import {useDispatch} from 'react-redux'
+
+
 
 export const DrinkCards = (props) => {
-    const getDrinks = e => {
-        e.preventDefault();
-        props.getCocktails();
-    }
-
+    const dispatch = useDispatch()
     const drinksArr = ['Margarita', 'Martini', 'Mojito', 'Daiquiri', 'Mimosa', 'Whiskey'];
 
     return (
@@ -21,30 +20,30 @@ export const DrinkCards = (props) => {
             <CardContainer>
                 <Card onClick={''}>
                     <img src={Margarita}/>
-                    <h3>drinksArr[1]</h3>
+                    <h3>{drinksArr[0]}</h3>
                 </Card>
                 <Card>
                     <img src={Martini}/>
-                    <h3>Martini</h3>
+                    <h3>{drinksArr[1]}</h3>
                 </Card>
                 <Card>
                     <img src={Mojito}/>
-                    <h3>Mojitos</h3>
+                    <h3>{drinksArr[2]}</h3>
                 </Card>
                 <Card>
                     <img src={Mimosa}/>
-                    <h3>Daiquiris</h3>
+                    <h3>{drinksArr[3]}</h3>
                 </Card>
                 <Card>
                     <img src={Mimosa}/>
-                    <h3>Mimosas</h3>
+                    <h3>{drinksArr[4]}</h3>
                 </Card>
                 <Card>
                     <img src={Whiskey}/>
-                    <h3>WhiskeySours</h3>
+                    <h3>{drinksArr[5]}</h3>
                 </Card>
             </CardContainer>
-            <button >Click me!</button>
+            <button onClick={() => dispatch(getCocktails(drinksArr[0]))}>Click me!</button>
         </CardDiv>
     )
 }
@@ -72,10 +71,12 @@ const Card = styled.div`
     width: 200px;
     margin: 2% 6%;
     background: rgb(250, 246, 244);
+    border-radius: 5px;
 
     img {
         height: 150px;
         width: 100%;
+        border-radius: 5px;
         
     }
     h3{
