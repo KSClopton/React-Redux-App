@@ -10,6 +10,7 @@ const initialState = {
 }
 
 export const updateCards = (state = initialState, action) => {
+    
     switch(action.type){
         case GET_COCKTAILS_START:
             return {
@@ -21,7 +22,7 @@ export const updateCards = (state = initialState, action) => {
 
         case GET_COCKTAILS_SUCCESS:
             return {
-                drinks: [action.payload],
+                drinks: action.payload,
                 isFetching: false,
                 error: ''
             }

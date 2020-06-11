@@ -1,17 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
+import logo from '../Images/logo.png'
+import {Link} from 'react-router-dom'
 
 export const NavBar = () => {
 
     return (
         <HeaderDiv>
             <LogoDiv>
-                <img src={'nothing'}/>
+                <img src={logo}/>
                 <h2>Cocktail Finder</h2>
             </LogoDiv>
             <div>
                 <NavItems>
-                    <a href='home'>Home</a>
+                    <Link to='/'>
+                        <a href='home'>Home</a>
+                    </Link>
                     <a href='contact us'>Contact Us</a>
                     <a href='news'>News</a>
                     <a href='about us'>About us</a>

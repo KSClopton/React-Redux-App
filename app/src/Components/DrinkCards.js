@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import  Margarita from '../Images/Margarita.jpg'
 import  Martini from '../Images/Martini.jpg'
@@ -18,32 +19,43 @@ export const DrinkCards = (props) => {
         <CardDiv>
             <h1>Click on your favorite cocktail to find delicious recipes!</h1>
             <CardContainer>
-                <Card onClick={''}>
+                <Card onClick={() => dispatch(getCocktails(drinksArr[0]))}>
+                    <Link className='link' to='/DrinkRecipe' style={{ textDecoration: 'none'}}>
                     <img src={Margarita}/>
                     <h3>{drinksArr[0]}</h3>
+                    </Link>
                 </Card>
-                <Card>
-                    <img src={Martini}/>
-                    <h3>{drinksArr[1]}</h3>
+                <Card onClick={() => dispatch(getCocktails(drinksArr[1]))}>
+                    <Link className='link' to='/DrinkRecipe' style={{ textDecoration: 'none'}}>
+                        <img src={Martini}/>
+                        <h3>{drinksArr[1]}</h3>
+                    </Link>
                 </Card>
-                <Card>
-                    <img src={Mojito}/>
-                    <h3>{drinksArr[2]}</h3>
+                <Card onClick={() => dispatch(getCocktails(drinksArr[2]))}>
+                    <Link className='link' to='/DrinkRecipe' style={{ textDecoration: 'none'}}>
+                        <img src={Mojito}/>
+                        <h3>{drinksArr[2]}</h3>
+                    </Link>
                 </Card>
-                <Card>
-                    <img src={Mimosa}/>
-                    <h3>{drinksArr[3]}</h3>
+                <Card onClick={() => dispatch(getCocktails(drinksArr[3]))}>
+                     <Link className='link' to='/DrinkRecipe' style={{ textDecoration: 'none'}}>
+                        <img src={Mimosa}/>
+                        <h3>{drinksArr[3]}</h3>
+                    </Link>
                 </Card>
-                <Card>
-                    <img src={Mimosa}/>
-                    <h3>{drinksArr[4]}</h3>
+                <Card onClick={() => dispatch(getCocktails(drinksArr[4]))}>
+                    <Link className='link' to='/DrinkRecipe' style={{ textDecoration: 'none'}}>
+                        <img src={Mimosa}/>
+                        <h3>{drinksArr[4]}</h3>
+                    </Link>
                 </Card>
-                <Card>
-                    <img src={Whiskey}/>
-                    <h3>{drinksArr[5]}</h3>
+                <Card onClick={() => dispatch(getCocktails(drinksArr[5]))}>
+                    <Link className='link' to='/DrinkRecipe' style={{ textDecoration: 'none'}}>
+                        <img src={Whiskey}/>
+                        <h3>{drinksArr[5]}</h3>
+                    </Link>
                 </Card>
             </CardContainer>
-            <button onClick={() => dispatch(getCocktails(drinksArr[0]))}>Click me!</button>
         </CardDiv>
     )
 }
@@ -59,11 +71,8 @@ const CardDiv = styled.div`
 const CardContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
-    border: solid yellow 2px;
     justify-content: space-evenly;
     
-
-
 `
 const Card = styled.div`
     border: solid white 2px;

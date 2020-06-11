@@ -8,7 +8,8 @@ export const getCocktails = (cocktail) => dispatch => {
     dispatch({ type: GET_COCKTAILS_START });
     axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail}`)
     .then(res => {
-        dispatch({type: GET_COCKTAILS_SUCCESS, payload: res.data.results})
+        console.log(res.data.drinks)
+        dispatch({type: GET_COCKTAILS_SUCCESS, payload: res.data.drinks})
     })
     .catch(err => {
         dispatch({type: GET_COCKTAILS_ERR, payload: err})
